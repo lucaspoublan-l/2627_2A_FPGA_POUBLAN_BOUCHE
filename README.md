@@ -26,3 +26,9 @@ end architecture rtl;
 
 ### Clignotement de la led
 Le sujet proposait un morceau de code à intégrer à notre projet. Nous y avons apporté quelques modifications :
+
+Tout d'abord, nous avons changé la fréquence de clignotement car 50MHz ne permet pas de voir le clignotement, on opte pour 500Hz.
+
+Ensuite, on modifie le code pour 
+
+Enfin, on n'oublie pas d'assigné chaque signal à un pin en utilisant t```pin planner```

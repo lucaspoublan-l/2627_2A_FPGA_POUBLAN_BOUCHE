@@ -142,7 +142,7 @@ On va simplifier le code en supprimant le compteur ```counter_led```.
 
 
 
-code du prof, a tester avec un tb
+code du prof, a tester avec un tb sur modelsim
 ``` vhdl
 library ieee;
 use ieee.std_logic_1164.all;

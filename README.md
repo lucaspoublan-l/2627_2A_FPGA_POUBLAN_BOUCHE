@@ -33,6 +33,7 @@ Ensuite, on modifie le code pour
 
 Enfin, on n'oublie pas d'assigné chaque signal à un pin en utilisant t```pin planner```
 
+```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -64,3 +65,4 @@ begin
 end process;
     o_led <= r_led_enable;
 end architecture rtl;
+```

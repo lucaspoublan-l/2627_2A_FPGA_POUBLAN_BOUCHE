@@ -65,4 +65,7 @@ begin
 end process;
     o_led <= r_led_enable;
 end architecture rtl;
+
+<img width="1612" height="425" alt="image" src="https://github.com/user-attachments/assets/9b0d8981-67b5-4bff-8fbe-ed5d6bb48aa6" />
+
 ```

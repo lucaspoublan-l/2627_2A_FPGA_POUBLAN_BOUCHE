@@ -1,10 +1,10 @@
 # 2627_2A_FPGA_POUBLAN_BOUCHE
 # TP1 : Tutoriel Quartus
-### Allumage de la led
+## Allumage de la led
 Dans devions programmer un composant permettant d'allumer la LED 0 lorsqu'on appuye sur le bouton poussoir de l'encodeur gauche.
 Un code était déjà proposé par l'énoncé mais il fallait le corriger car il éteignait la led au lieu de l'allumé.
 
-Pour cela, on ajoute la fonction *not* à la ligne *led0 <= pushl;* pour inverser l'allumage.
+Pour cela, on ajoute la fonction *not* à la ligne ```led0 <= pushl;``` pour inverser l'allumage.
 
 **Code corrigé :**
 ```vhdl
@@ -24,15 +24,16 @@ begin
 end architecture rtl;
 ```
 
-### Clignotement de la led
+## Clignotement de la led
 Le sujet proposait un morceau de code à intégrer à notre projet. Nous y avons apporté quelques modifications :
 
 Tout d'abord, nous avons changé la fréquence de clignotement car 50MHz ne permet pas de voir le clignotement, on opte pour 500Hz.
 
-Ensuite, on modifie le code pour 
+Ensuite, on corrige pour la boucle t```if``` pour s'assurer que la led change bien d'état en mettant l'instruction t```not```  dans la ligne t```r_led_enable <= not(r_led_enable);```.
 
 Enfin, on n'oublie pas d'assigné chaque signal à un pin en utilisant t```pin planner```
 
+### Code complet
 ```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
@@ -65,7 +66,11 @@ begin
 end process;
     o_led <= r_led_enable;
 end architecture rtl;
-
+```
+### Schéma du composant
 <img width="1612" height="425" alt="image" src="https://github.com/user-attachments/assets/9b0d8981-67b5-4bff-8fbe-ed5d6bb48aa6" />
 
-```
+On a bien les boucles ```if``` et le compteur, et on a le comportement demandé.
+
+
+## Chenillard

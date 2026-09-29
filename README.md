@@ -75,9 +75,10 @@ On a bien les boucles ```if``` et le compteur, et on a le comportement demandé.
 
 ## Chenillard
 
-On reprend le code précédent que l'on va modifier pour faire un chenillard. On remplace le signal ```r_led_enable``` par un signal buffer ```counter_led``` déplacer la led qui s'allume sur la carte. On implémente un bus ```o_led``` dont chaque valeur est assigné à une pin pour allumer une led. 
+On reprend le code précédent que l'on va modifier pour faire un chenillard. On remplace le signal ```r_led_enable``` par un signal compteur ```counter_led``` déplacer la led qui s'allume sur la carte. On implémente un bus ```o_led``` dont chaque valeur est assigné à une pin pour allumer une led. 
 
 On fait 2 *process* car on veut que ces 2 parties de code fonctionnent **simultanément**, on veut que le compteur d'horloge s'exécute en même temps que l'allumage des leds. Dans le second *process*, on utilise les boucles if et le compteur ```counter_led``` pour qu'à chaque *front montant d'horloge* une led s'allume et sa précédente s'éteint.
+
 
 ```vhdl
 

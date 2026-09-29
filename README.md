@@ -29,9 +29,9 @@ Le sujet proposait un morceau de code à intégrer à notre projet. Nous y avons
 
 Tout d'abord, nous avons changé la fréquence de clignotement car 50MHz ne permet pas de voir le clignotement, on opte pour 500Hz.
 
-Ensuite, on corrige pour la boucle t```if``` pour s'assurer que la led change bien d'état en mettant l'instruction t```not```  dans la ligne t```r_led_enable <= not(r_led_enable);```.
+Ensuite, on corrige pour la boucle ```if``` pour s'assurer que la led change bien d'état en mettant l'instruction ```not```  dans la ligne ```r_led_enable <= not(r_led_enable);```.
 
-Enfin, on n'oublie pas d'assigné chaque signal à un pin en utilisant t```pin planner```
+Enfin, on n'oublie pas d'assigné chaque signal à un pin en utilisant ```pin planner```
 
 ### Code complet
 ```vhdl

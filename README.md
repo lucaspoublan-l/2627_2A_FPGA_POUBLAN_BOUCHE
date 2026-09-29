@@ -75,7 +75,7 @@ On a bien les boucles ```if``` et le compteur, et on a le comportement demandé.
 
 ## Chenillard
 
-
+On reprend le code précédent que l'on va modifier pour faire un chenillard. on ajoute un compteur ```counter_led``` déplacer la led qui s'allume sur la carte. et on supprime le signal ```r_led_enable```.
 ```vhdl
 
 library ieee;

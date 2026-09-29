@@ -96,6 +96,7 @@ end entity tuto_fpga;
 
 architecture rtl of tuto_fpga is
 	 signal counter_led : natural range 0 to 9 :=0;
+	 signal r_led : std_logic_vector(9 downto 0);
 begin
 process(i_clk, i_rst_n)
     variable counter_clk : natural range 0 to 2500000 := 0;
@@ -117,14 +118,20 @@ begin
 end process;
 process(i_clk, i_rst_n)
 begin
-	if  (counter_led=0) then
-		o_led(0) <= '1';
-		o_led(9) <= '0';
+	if (i_rst_n = '1') then
+		if  (counter_led=0) then
+			r_led(0) <= not(r_led(0));
+			r_led(9) <= '0';
+		else
+			r_led(counter_led-1) <= '0';
+			r_led(counter_led) <= '1';
+		end if;
 	else
-		o_led(counter_led-1) <= '0';
-		o_led(counter_led) <= '1';
+		r_led <= (others =>'0');
 	end if;
 end process;
+	o_led <= r_led;
+
 end architecture rtl;
 
 ```

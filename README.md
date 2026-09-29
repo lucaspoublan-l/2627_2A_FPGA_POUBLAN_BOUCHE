@@ -101,7 +101,7 @@ begin
     elsif (rising_edge(i_clk)) then
         if (counter_clk = 2500000) then
             counter_clk := 0;
-				counter_led <= counter_led +1;
+			counter_led <= counter_led +1;
 				if (counter_led = 10) then
 					counter_led <= 0 ;
 				end if;

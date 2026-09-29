@@ -82,28 +82,25 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity tuto_fpga is
-	port (
-		i_clk : in std_logic;	
-		i_rst_n : in std_logic;
-		o_led : out std_logic_vector(9 downto 0)
-	);
+    port (
+        i_clk : in std_logic;
+        i_rst_n : in std_logic;
+        o_led : out std_logic_vector(9 downto 0)
+    );
 end entity tuto_fpga;
 
 architecture rtl of tuto_fpga is
-	signal r_led_enable : std_logic := '0';
-	signal counter_led : natural range 0 to 9 :=0;
+	 signal counter_led : natural range 0 to 9 :=0;
 begin
 process(i_clk, i_rst_n)
-	variable counter_clk : natural range 0 to 2500000 := 0;
+    variable counter_clk : natural range 0 to 2500000 := 0;
 begin
-	if (i_rst_n = '0') then
-		counter_clk := 0;
-		r_led_enable <= '0';
-		counter_led <= 0;
-	elsif (rising_edge(i_clk)) then
+    if (i_rst_n = '0') then
+        counter_clk := 0;
+		  counter_led <= 0;
+    elsif (rising_edge(i_clk)) then
         if (counter_clk = 2500000) then
             counter_clk := 0;
-            r_led_enable <= not(r_led_enable);
 				counter_led <= counter_led +1;
 				if (counter_led = 10) then
 					counter_led <= 0 ;
@@ -115,7 +112,7 @@ begin
 end process;
 process(i_clk, i_rst_n)
 begin
-	if  (counter_led=0) then 
+	if  (counter_led=0) then
 		o_led(0) <= '1';
 		o_led(9) <= '0';
 	else
@@ -124,4 +121,5 @@ begin
 	end if;
 end process;
 end architecture rtl;
+
 ```

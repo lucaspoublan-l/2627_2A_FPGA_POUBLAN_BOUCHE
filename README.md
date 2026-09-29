@@ -76,7 +76,8 @@ On a bien les boucles ```if``` et le compteur, et on a le comportement demandé.
 ## Chenillard
 
 
-'''vhdl
+```vhdl
+
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -123,4 +124,4 @@ begin
 	end if;
 end process;
 end architecture rtl;
-'''
+```

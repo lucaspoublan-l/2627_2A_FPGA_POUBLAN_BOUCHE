@@ -74,7 +74,7 @@ On a bien les boucles ```if``` et le compteur, et on a le comportement demandé.
 
 
 ## Chenillard
-
+### Méthode 1 (Fonctionnelle)
 On reprend le code précédent que l'on va modifier pour faire un chenillard. On remplace le signal ```r_led_enable``` par un signal compteur ```counter_led``` déplacer la led qui s'allume sur la carte. On implémente un bus ```o_led``` dont chaque valeur est assigné à une pin pour allumer une led. 
 
 On fait 2 *process* car on veut que ces 2 parties de code fonctionnent **simultanément**, on veut que le compteur d'horloge s'exécute en même temps que l'allumage des leds. Dans le second *process*, on utilise les boucles if et le compteur ```counter_led``` pour qu'à chaque *front montant d'horloge* une led s'allume et sa précédente s'éteint.
@@ -135,3 +135,9 @@ end process;
 end architecture rtl;
 
 ```
+### Méthode 2 (Mieux)
+On va simplifier le code en supprimant le compteur ```counter_led```.
+
+**Principe** : On prend un motif sur 10 bits (ici 0000000001) et on le déplace d'un bit à chaque front montant d'horloge. Ainsi, on change toutes les valeurs ```r_led``` en même temps et le code fonctionne pour n'importe quel motif.
+
+

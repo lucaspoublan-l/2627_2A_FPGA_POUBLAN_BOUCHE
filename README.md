@@ -140,6 +140,9 @@ On va simplifier le code en supprimant le compteur ```counter_led```.
 
 **Principe** : On prend un motif sur 10 bits (ici 0000000001) et on le déplace d'un bit à chaque front montant d'horloge. Ainsi, on change toutes les valeurs ```r_led``` en même temps et le code fonctionne pour n'importe quel motif.
 
+
+
+code du prof, a tester avec un tb
 ``` vhdl
 library ieee;
 use ieee.std_logic_1164.all;

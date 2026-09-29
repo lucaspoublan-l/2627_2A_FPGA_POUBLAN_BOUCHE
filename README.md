@@ -79,6 +79,7 @@ On reprend le code précédent que l'on va modifier pour faire un chenillard. On
 
 On fait 2 *process* car on veut que ces 2 parties de code fonctionnent **simultanément**, on veut que le compteur d'horloge s'exécute en même temps que l'allumage des leds. Dans le second *process*, on utilise les boucles if et le compteur ```counter_led``` pour qu'à chaque *front montant d'horloge* une led s'allume et sa précédente s'éteint.
 
+**Attention** : chaque signal doit être modifié dans un seul process sinon on a des erreurs causés par le multithreading. Donc on fait bien attention à modifier ```counter_led``` seulement dans le premier process, ```r_led```seulement dans le deuxième et ```o_led``` seulement en dehors des process. On utilise d'ailleurs un buffer ```r_led``` pour éviter de modifier directement le signal de sortie ```o_led``` dans les process. 
 
 ```vhdl
 

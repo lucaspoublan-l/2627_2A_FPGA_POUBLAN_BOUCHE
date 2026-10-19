@@ -1,13 +1,13 @@
 # PROJET ECRAN MAGIQUE
 
-## Gestion des encodeurs
+# Séance 1 : Gestion des encodeurs
 
-### Le schéma de l'encoder est le suivant : 
+## Le schéma de l'encoder est le suivant : 
 <img width="1202" height="572" alt="image" src="https://github.com/user-attachments/assets/1a344311-b114-4ea0-a35b-7d9b744cdada" />
 
 
 
-### Explications : 
+## Explications : 
 En entrée, on a les données i_A et i_B mesurées par les **deux capteurs A et B** de l'encodeur en temps réel.
 
 On compartimentent le code en 3 process les différentes parties du code ( les bascules, la détection du sens de rotation et le conteur final).
@@ -19,3 +19,6 @@ Ensuite, le FPGA regarde quel capteur est en front montant ainsi que la valeur d
 
 Enfin, selon le sens de rotation de on ajoute ou soustrait 1 à la **valeur binaire affichée** par les LEDs et on revient à 0 lorsque toutes les leds sont allumées. En pratique, on ajoute 1 quand clockwise vaut 1 et un soustrait 1 quand cntclockwise vaut 1.
 
+## Simulation :
+
+## Expérimentation sur la carte : 

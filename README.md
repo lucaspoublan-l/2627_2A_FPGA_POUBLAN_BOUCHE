@@ -3,7 +3,8 @@
 ## Gestion des encodeurs
 
 ### Le schéma de l'encoder est le suivant : 
-<img width="1202" height="572" alt="image" src="https://github.com/user-attachments/assets/4993c2e6-a428-4c4b-aa6d-014acfbdc274" />
+<img width="1202" height="572" alt="image" src="https://github.com/user-attachments/assets/1a344311-b114-4ea0-a35b-7d9b744cdada" />
+
 
 
 ### Explications : 
